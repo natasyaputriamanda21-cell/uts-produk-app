@@ -14,11 +14,9 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div class="min-h-screen bg-gray-100">
-        <!-- Navbar atas -->
         <nav class="border-b border-gray-100 bg-white">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 justify-between">
-                    <!-- Logo dan nama aplikasi -->
                     <div class="flex">
                         <div class="flex shrink-0 items-center">
                             <Link :href="route('dashboard')">
@@ -28,7 +26,6 @@ const showingNavigationDropdown = ref(false);
                             </Link>
                         </div>
 
-                        <!-- Menu desktop -->
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                             <NavLink
                                 :href="route('dashboard')"
@@ -39,7 +36,6 @@ const showingNavigationDropdown = ref(false);
                         </div>
                     </div>
 
-                    <!-- Menu profil -->
                     <div class="hidden sm:ms-6 sm:flex sm:items-center">
                         <div class="relative ms-3">
                             <Dropdown align="right" width="48">
@@ -81,7 +77,6 @@ const showingNavigationDropdown = ref(false);
                         </div>
                     </div>
 
-                    <!-- Tombol menu mobile -->
                     <div class="-me-2 flex items-center sm:hidden">
                         <button
                             @click="showingNavigationDropdown = !showingNavigationDropdown"
@@ -119,7 +114,6 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </div>
 
-            <!-- Menu mobile -->
             <div
                 v-show="showingNavigationDropdown"
                 class="sm:hidden"
@@ -160,12 +154,10 @@ const showingNavigationDropdown = ref(false);
             </div>
         </nav>
 
-        <!-- Sidebar dan konten utama -->
         <div class="flex min-h-screen">
             <Sidebar />
 
             <div class="min-w-0 flex-1">
-                <!-- Judul halaman -->
                 <header
                     v-if="$slots.header"
                     class="bg-white shadow"
@@ -175,7 +167,6 @@ const showingNavigationDropdown = ref(false);
                     </div>
                 </header>
 
-                <!-- Isi halaman -->
                 <main class="p-4">
                     <slot />
                 </main>

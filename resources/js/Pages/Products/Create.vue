@@ -3,7 +3,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { useForm, Head } from '@inertiajs/vue3';
 
-// Form untuk menambahkan data produk
 const form = useForm({
     kode_produk: '',
     nama_produk: '',
@@ -12,7 +11,6 @@ const form = useForm({
     stok: 0,
 });
 
-// Mengirim data ke ProdukController
 function submit() {
     form.post(route('products.store'));
 }
@@ -30,9 +28,9 @@ function submit() {
             <form @submit.prevent="submit">
                 <div class="flex flex-nowrap items-end gap-3 overflow-x-auto pb-3">
 
-                    <!-- Kode Produk -->
                     <div class="flex min-w-[130px] flex-col">
                         <label class="mb-2">Kode Produk</label>
+
                         <input
                             v-model="form.kode_produk"
                             type="text"
@@ -47,9 +45,9 @@ function submit() {
                         </span>
                     </div>
 
-                    <!-- Nama Produk -->
                     <div class="flex min-w-[150px] flex-col">
                         <label class="mb-2">Nama Produk</label>
+
                         <input
                             v-model="form.nama_produk"
                             type="text"
@@ -64,9 +62,9 @@ function submit() {
                         </span>
                     </div>
 
-                    <!-- Kategori -->
                     <div class="flex min-w-[130px] flex-col">
                         <label class="mb-2">Kategori</label>
+
                         <input
                             v-model="form.kategori"
                             type="text"
@@ -81,9 +79,9 @@ function submit() {
                         </span>
                     </div>
 
-                    <!-- Harga -->
                     <div class="flex min-w-[130px] flex-col">
                         <label class="mb-2">Harga</label>
+
                         <input
                             v-model="form.harga"
                             type="number"
@@ -99,9 +97,9 @@ function submit() {
                         </span>
                     </div>
 
-                    <!-- Stok -->
                     <div class="flex min-w-[90px] flex-col">
                         <label class="mb-2">Stok</label>
+
                         <input
                             v-model="form.stok"
                             type="number"
@@ -117,7 +115,6 @@ function submit() {
                         </span>
                     </div>
 
-                    <!-- Tombol Simpan -->
                     <button
                         type="submit"
                         :disabled="form.processing"

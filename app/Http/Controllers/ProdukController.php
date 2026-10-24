@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Produk;
 
 class ProdukController extends Controller
 {
@@ -76,11 +75,9 @@ class ProdukController extends Controller
 
     public function destroy(Produk $product)
     {
-        
+        $product->delete();
 
-    $product->delete();
-
-    return redirect()->route('products.index')
-        ->with('success', 'Data produk berhasil dihapus.');
+        return redirect()->route('products.index')
+            ->with('success', 'Data produk berhasil dihapus.');
     }
 }

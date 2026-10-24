@@ -1,5 +1,7 @@
+
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+
 import { Head, Link, useForm } from '@inertiajs/vue3'
 
 const props = defineProps({
@@ -31,10 +33,13 @@ function submit() {
 
         <div class="max-w-2xl p-6">
             <form @submit.prevent="submit" class="space-y-4 rounded bg-white p-6 shadow">
+
                 <div>
                     <label class="mb-1 block">Kode Produk</label>
+
                     <input v-model="form.kode_produk"
                            class="w-full rounded border-gray-300" />
+
                     <p v-if="form.errors.kode_produk" class="text-sm text-red-600">
                         {{ form.errors.kode_produk }}
                     </p>
@@ -42,8 +47,10 @@ function submit() {
 
                 <div>
                     <label class="mb-1 block">Nama Produk</label>
+
                     <input v-model="form.nama_produk"
                            class="w-full rounded border-gray-300" />
+
                     <p v-if="form.errors.nama_produk" class="text-sm text-red-600">
                         {{ form.errors.nama_produk }}
                     </p>
@@ -51,8 +58,10 @@ function submit() {
 
                 <div>
                     <label class="mb-1 block">Kategori</label>
+
                     <input v-model="form.kategori"
                            class="w-full rounded border-gray-300" />
+
                     <p v-if="form.errors.kategori" class="text-sm text-red-600">
                         {{ form.errors.kategori }}
                     </p>
@@ -60,9 +69,11 @@ function submit() {
 
                 <div>
                     <label class="mb-1 block">Harga</label>
+
                     <input v-model="form.harga"
                            type="number" min="0" step="0.01"
                            class="w-full rounded border-gray-300" />
+
                     <p v-if="form.errors.harga" class="text-sm text-red-600">
                         {{ form.errors.harga }}
                     </p>
@@ -70,9 +81,11 @@ function submit() {
 
                 <div>
                     <label class="mb-1 block">Stok</label>
+
                     <input v-model="form.stok"
                            type="number" min="0" step="1"
                            class="w-full rounded border-gray-300" />
+
                     <p v-if="form.errors.stok" class="text-sm text-red-600">
                         {{ form.errors.stok }}
                     </p>
